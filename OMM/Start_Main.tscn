@@ -2,7 +2,7 @@
 
 [ext_resource path="res://OMM/Start_Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/User_Interface.tscn" type="PackedScene" id=2]
-[ext_resource path="res://UI/TopBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://OMM/Start_up.tscn" type="PackedScene" id=3]
 
 [node name="Start_Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,10 +13,10 @@ margin_bottom = 600.0
 
 [node name="FileDialog" type="FileDialog" parent="."]
 visible = true
-margin_left = 232.271
-margin_top = 623.334
-margin_right = 837.271
-margin_bottom = 886.334
+margin_left = 500.331
+margin_top = -265.686
+margin_right = 1105.33
+margin_bottom = -2.68628
 window_title = "Open a Directory"
 mode = 2
 access = 2
@@ -27,6 +27,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TopBar" parent="." instance=ExtResource( 3 )]
+[node name="Start_up" parent="." instance=ExtResource( 3 )]
+margin_top = -128.882
+margin_bottom = -2.88202
 
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]

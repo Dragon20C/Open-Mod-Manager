@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://OMM/Start_up.gd" type="Script" id=1]
+
+[node name="Popup" type="AcceptDialog"]
+margin_right = 500.0
+margin_bottom = 126.0
+window_title = "First time"
+dialog_text = "First time opening Open mod manager, will create files and folders in the documents folder.
+
+Please Input fallout 4s directory, this can be found in your steam libaray folder, the fallout 4 folder is the one with fallout4.exe inside of it."
+dialog_autowrap = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="confirmed" from="." to="." method="_on_Popup_confirmed"]

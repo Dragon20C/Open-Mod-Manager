@@ -24,8 +24,9 @@ func check_all_files_exist():
 	return files_exist
 
 func first_time():
-	print("first time setup")
-	explorer.popup_centered(get_viewport_rect().size / 2)
+	get_node("Start_up").popup_centered(get_viewport_rect().size / 2)
+	#print("first time setup")
+	#explorer.popup_centered(get_viewport_rect().size / 2)
 
 func set_ini_info(path : String):
 	var config = ConfigFile.new()
@@ -45,7 +46,7 @@ func set_ini_info(path : String):
 func _on_FileDialog_dir_selected(dir : String):
 	set_ini_info(dir)
 
-func check_valid_folder(path):
+func check_valid_folder(path : String):
 	var file = File.new()
 	if file.file_exists(path + "/Fallout4.exe"):
 		return true
