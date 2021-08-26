@@ -28,6 +28,7 @@ __meta__ = {
 }
 
 [node name="Start_up" parent="." instance=ExtResource( 3 )]
+visible = true
 margin_top = -128.882
 margin_bottom = -2.88202
 

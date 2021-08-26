@@ -5,9 +5,15 @@ var OMM_Folder = docs + "/Open Mod Manager"
 onready var explorer = get_node("FileDialog")
 
 func _ready():
+	print(command_line("wine", "--version"))
 	if check_all_files_exist():
 		first_time()
-	
+
+func command_line(command : String, path : String):
+	var output = []
+	var exit_code = OS.execute(command, [path], true, output) 
+	return output
+
 func check_all_files_exist():
 	var files_exist = false
 	var directory = Directory.new()
