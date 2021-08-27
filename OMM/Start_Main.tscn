@@ -27,9 +27,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ModFolder" type="FileDialog" parent="."]
+visible = true
+margin_left = 500.331
+margin_top = -554.337
+margin_right = 1105.33
+margin_bottom = -291.337
+window_title = "Open a Directory"
+mode = 2
+access = 2
+show_hidden_files = true
+current_dir = "/home/carlos/Open mod manager"
+current_path = "/home/carlos/Open mod manager/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Start_up" parent="." instance=ExtResource( 3 )]
 visible = true
 margin_top = -128.882
 margin_bottom = -2.88202
 
+[node name="Mod_start_up" parent="." instance=ExtResource( 3 )]
+visible = true
+margin_top = -277.553
+margin_bottom = -151.553
+window_title = "Choose a mod folder location"
+dialog_text = "You now need to choose a location to store all your mods I recommend on a drive that has a lot of storage, and make sure its an ext4 formated drive."
+script = null
+
+[node name="Button" type="Button" parent="."]
+margin_left = 490.821
+margin_top = 341.701
+margin_right = 576.821
+margin_bottom = 361.701
+text = "Test Button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="User_Interface/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
+[connection signal="dir_selected" from="ModFolder" to="." method="_on_ModFolder_dir_selected"]
+[connection signal="confirmed" from="Mod_start_up" to="." method="_on_Mod_start_up_confirmed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[editable path="User_Interface"]

@@ -44,7 +44,7 @@ margin_right = 70.0
 margin_bottom = 40.0
 custom_fonts/font = ExtResource( 2 )
 text = "Settings"
-items = [ "Restart game path", null, 0, false, false, 0, 0, null, "", false ]
+items = [ "New Game Path", null, 0, false, false, 0, 0, null, "", false, "New Mod Folder", null, 0, false, false, 1, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,13 +61,14 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Install a mod"
 
-[node name="About" type="MenuButton" parent="HBoxContainer"]
+[node name="About" type="Button" parent="HBoxContainer"]
 margin_left = 182.0
-margin_right = 236.0
+margin_right = 250.0
 margin_bottom = 40.0
-focus_mode = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
-text = "About"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "About me"
