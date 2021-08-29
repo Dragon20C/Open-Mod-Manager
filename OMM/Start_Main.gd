@@ -69,7 +69,7 @@ func check_valid_folder(path : String):
 
 func create_mod_folder(path : String):
 	var config = ConfigFile.new()
-	var err = config.load(OMM_Folder + "/OMM.ini")
+	config.load(OMM_Folder + "/OMM.ini")
 	mod_folder = true
 	config.set_value("OMM", "Mod_Folder_exist", mod_folder)
 	config.set_value("OMM", "Mod_Folder_path", path)
@@ -119,7 +119,7 @@ func install_F4SE():
 			directory.copy(fallout4_dir + "/Fallout4Launcher.exe",fallout4_dir +"/Launcher_backup/Fallout4Launcher.exe")
 			directory.rename(fallout4_dir + "/Fallout4Launcher.exe",fallout4_dir + "/Fallout4Launcher.exe.backup")
 		
-		if !directory.dir_exists(fallout4_dir +"/"+ F4SE_File_names[0]):
+		if !directory.file_exists(fallout4_dir +"/"+ F4SE_File_names[0]):
 			for x in F4SE_Files.size():
 				print(fallout4_dir +"/"+ F4SE_File_names[x])
 				directory.copy(F4SE_Files[x],fallout4_dir +"/"+ F4SE_File_names[x])

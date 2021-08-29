@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/Textures/Foreground.png" type="Texture" id=1]
 [ext_resource path="res://Font/Default_Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/TopBar.gd" type="Script" id=3]
+[ext_resource path="res://F4SE Options.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -16,6 +18,7 @@
 [node name="TopBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,9 +64,22 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 text = "Install a mod"
 
-[node name="About" type="Button" parent="HBoxContainer"]
+[node name="F4SE Options" type="MenuButton" parent="HBoxContainer"]
 margin_left = 182.0
-margin_right = 250.0
+margin_right = 290.0
+margin_bottom = 40.0
+focus_mode = 2
+custom_fonts/font = ExtResource( 2 )
+text = "F4SE Options"
+items = [ "Install F4SE", null, 0, false, false, 0, 0, null, "", false, "Uninstall F4SE", null, 0, false, false, 1, 0, null, "", false ]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Button" parent="HBoxContainer"]
+margin_left = 300.0
+margin_right = 368.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -72,3 +88,5 @@ custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 text = "About me"
+
+[connection signal="pressed" from="HBoxContainer/About" to="." method="_on_About_pressed"]

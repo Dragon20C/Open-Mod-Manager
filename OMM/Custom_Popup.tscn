@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://OMM/Custom_Popup.gd" type="Script" id=1]
+
+[node name="Custom_Popup" type="AcceptDialog"]
+margin_right = 500.0
+margin_bottom = 250.0
+window_title = "Title"
+dialog_text = "Text"
+dialog_autowrap = true
+script = ExtResource( 1 )
+
+[connection signal="popup_hide" from="." to="." method="_on_Custom_Popup_popup_hide"]
