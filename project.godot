@@ -8,11 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Storage",
+"language": "GDScript",
+"path": "res://StorageClass.gd"
+} ]
+_global_script_class_icons={
+"Storage": ""
+}
+
 [application]
 
 config/name="Open mod manager"
 run/main_scene="res://OMM/Start_Main.tscn"
 config/icon="res://Config/icon.png"
+
+[autoload]
+
+StorageClass="*res://StorageClass.gd"
 
 [display]
 

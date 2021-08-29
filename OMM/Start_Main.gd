@@ -133,7 +133,7 @@ func install_F4SE():
 					data_config.save(fallout4_dir + "/Data/F4SE/f4se.ini")
 					directory.make_dir(fallout4_dir + "/Data/F4SE/Plugins")
 					directory.copy("res://achievements_DLL/achievements.dll",fallout4_dir + "/Data/F4SE/Plugins/achievements.dll")
-		
+					
 func _on_Button_pressed():
 	install_F4SE()
 
