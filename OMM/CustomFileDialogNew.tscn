@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://OMM/CustomFileDialogNew.gd" type="Script" id=1]
+
+[node name="CustomFileDialog" type="FileDialog"]
+visible = true
+margin_right = 605.0
+margin_bottom = 345.0
+rect_min_size = Vector2( 200, 263 )
+mode = 2
+access = 2
+show_hidden_files = true
+current_dir = "/mnt/1TB SSD/Git Projects/Open-Mod-Manager"
+current_path = "/mnt/1TB SSD/Git Projects/Open-Mod-Manager/"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="popup_hide" from="." to="." method="_on_CustomFileDialog_popup_hide"]

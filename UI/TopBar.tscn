@@ -51,9 +51,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Install a mod" type="Button" parent="HBoxContainer"]
+[node name="Mods Settings" type="MenuButton" parent="HBoxContainer"]
 margin_left = 80.0
-margin_right = 172.0
+margin_right = 180.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -61,11 +61,12 @@ custom_styles/focus = SubResource( 3 )
 custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
-text = "Install a mod"
+text = "Mods settings"
+items = [ "Change mod folder", null, 0, false, false, 0, 0, null, "", false, "Install mod", null, 0, false, false, 1, 0, null, "", false, "Uninstall mod", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="F4SE Options" type="MenuButton" parent="HBoxContainer"]
-margin_left = 182.0
-margin_right = 290.0
+margin_left = 190.0
+margin_right = 298.0
 margin_bottom = 40.0
 focus_mode = 2
 custom_fonts/font = ExtResource( 2 )
@@ -76,8 +77,8 @@ __meta__ = {
 }
 
 [node name="About" type="Button" parent="HBoxContainer"]
-margin_left = 300.0
-margin_right = 368.0
+margin_left = 308.0
+margin_right = 376.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -87,4 +88,5 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = ExtResource( 2 )
 text = "About me"
 
+[connection signal="pressed" from="HBoxContainer/Mods Settings" to="." method="_on_Install_a_mod_pressed"]
 [connection signal="pressed" from="HBoxContainer/About" to="." method="_on_About_pressed"]

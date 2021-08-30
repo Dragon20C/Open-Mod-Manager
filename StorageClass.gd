@@ -5,6 +5,12 @@ var docs = OS.get_environment("HOME") + "/Documents"
 var OMM_Folder = docs + "/Open Mod Manager"
 
 
+
+func command_line(command : String, path : String):
+	var output = []
+	OS.execute(command, [path], true, output) 
+	return output
+
 func list_files_in_directory(path):
 	var files = []
 	var dir = Directory.new()
@@ -114,3 +120,13 @@ func uninstall_F4SE():
 			directory.remove(fallout4_dir + "/Data/F4SE")
 		return true
 	return false
+	
+func create_mod_folder(path : String):
+	var mod_folder = false
+	var config = ConfigFile.new()
+	config.load(OMM_Folder + "/OMM.ini")
+	mod_folder = true
+	config.set_value("OMM", "Mod_Folder_exist", mod_folder)
+	config.set_value("OMM", "Mod_Folder_path", path)
+	config.save(OMM_Folder + "/OMM.ini")
+	print("making mod folder")
