@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://OMM/Start_Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/User_Interface.tscn" type="PackedScene" id=2]
 [ext_resource path="res://OMM/Start_up.tscn" type="PackedScene" id=3]
+[ext_resource path="res://OMM/FileLoader.tscn" type="PackedScene" id=4]
 
 [node name="Start_Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -65,6 +66,8 @@ text = "Test Button"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FileLoader" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="User_Interface/StartGameButton" to="." method="_on_StartGameButton_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
