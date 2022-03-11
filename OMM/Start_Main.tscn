@@ -22,8 +22,8 @@ window_title = "Open a Directory"
 mode = 2
 access = 2
 show_hidden_files = true
-current_dir = "/home/carlos/Open mod manager"
-current_path = "/home/carlos/Open mod manager/"
+current_dir = "/mnt/1TB SSD/Godot Projects/Open-Mod-Manager"
+current_path = "/mnt/1TB SSD/Godot Projects/Open-Mod-Manager/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,8 +38,8 @@ window_title = "Open a Directory"
 mode = 2
 access = 2
 show_hidden_files = true
-current_dir = "/home/carlos/Open mod manager"
-current_path = "/home/carlos/Open mod manager/"
+current_dir = "/mnt/1TB SSD/Godot Projects/Open-Mod-Manager"
+current_path = "/mnt/1TB SSD/Godot Projects/Open-Mod-Manager/"
 __meta__ = {
 "_edit_use_anchors_": false
 }

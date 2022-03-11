@@ -3,7 +3,8 @@ class_name Storage
 
 var docs = OS.get_environment("HOME") + "/Documents"
 var OMM_Folder = docs + "/Open Mod Manager"
-
+var skyrim = "Skyrim_SE"
+var fallout4 = "Fallout_4"
 
 
 func command_line(command : String, path : String):

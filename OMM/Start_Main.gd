@@ -5,17 +5,36 @@ var OMM_Folder = docs + "/Open Mod Manager"
 onready var explorer = get_node("FileDialog")
 
 var mod_folder = false
-
+var Code_Class = null
 func _ready():
-	print(command_line("wine", "--version"))
-	if check_all_files_exist():
-		first_time()
+	Code_Class = Storage.new()
+	print(Code_Class.command_line("wine", "--version"))
+	print(Code_Class.command_line("wine", "--version"))
+	first_set_up()
 
-func command_line(command : String, path : String):
-	var output = []
-	OS.execute(command, [path], true, output) 
-	return output
+func OMM_Config():
+	var file = ConfigFile.new()
+	pass
 
+func first_set_up():
+	var dir = Directory.new()
+	var file = ConfigFile.new()
+	if !dir.dir_exists(OMM_Folder):
+		dir.make_dir(OMM_Folder)
+		dir.make_dir(OMM_Folder + "/" + Code_Class.fallout4) # Makes a fallout 4 folder
+		dir.make_dir(OMM_Folder + "/" + Code_Class.fallout4 + "/Mods") # Makes a mod folder a place to store mods
+		dir.make_dir(OMM_Folder + "/" + Code_Class.skyrim)
+		dir.make_dir(OMM_Folder + "/" + Code_Class.skyrim + "/Mods")
+		
+	if file.load(OMM_Folder + "/" + Code_Class.fallout4 + "/OMM.ini") != OK: # Check if file exists
+		file.set_value("OMM", Code_Class.fallout4 + "_Dir", "") # Sets some info into an ini file
+		file.save(OMM_Folder + "/" + Code_Class.fallout4 + "/OMM.ini") # Save the ini file into the game dir
+	
+	if file.load(OMM_Folder + "/" + Code_Class.skyrim + "/OMM.ini") != OK:
+		file.clear()
+		file.set_value("OMM", Code_Class.skyrim + "_Dir", "")
+		file.save(OMM_Folder + "/" + Code_Class.skyrim + "/OMM.ini")
+		
 func check_all_files_exist():
 	var files_exist = false
 	var directory = Directory.new()
@@ -23,6 +42,11 @@ func check_all_files_exist():
 	if !directory.dir_exists(docs + "/Open Mod Manager"):
 		directory.make_dir(OMM_Folder)
 		files_exist = true
+		
+	if !directory.dir_exists(OMM_Folder + "fallout4"):
+		directory.make_dir(OMM_Folder + "fallout4")
+	if !directory.dir_exists(OMM_Folder + "skyrim"):
+		directory.make_dir(OMM_Folder + "skyrim")
 		
 	if config.load(OMM_Folder + "/OMM.ini") != OK:
 		config.set_value("OMM", "Fallout4_Dir", "")
